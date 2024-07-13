@@ -1,10 +1,8 @@
 package com.twitter.gateway.filter;
 
-
-import com.gmail.merikbest2015.dto.response.user.UserPrincipalResponse;
-import com.gmail.merikbest2015.security.JwtAuthenticationException;
-import com.gmail.merikbest2015.security.JwtProvider;
-import com.twitter.gateway.config.ClientConfig;
+import main.java.com.leon.baobui.security.JwtProvider;
+import main.java.com.leon.baobui.dto.response.user.UserPrincipalResponse;
+import main.java.com.leon.baobui.security.JwtAuthenticationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,13 +10,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
-import static com.gmail.merikbest2015.constants.ErrorMessage.JWT_TOKEN_EXPIRED;
-import static com.gmail.merikbest2015.constants.FeignConstants.USER_SERVICE;
-import static com.gmail.merikbest2015.constants.PathConstants.*;
+import static main.java.com.leon.baobui.constants.ErrorMessage.JWT_TOKEN_EXPIRED;
+import static main.java.com.leon.baobui.constants.PathConstants.*;
 
 @Component
 public class AuthFilter extends

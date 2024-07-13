@@ -1,7 +1,7 @@
 package com.twitter.gateway;
 
-import com.gmail.merikbest2015.configuration.SharedConfiguration;
-import com.gmail.merikbest2015.security.JwtProvider;
+import main.java.com.leon.baobui.configuration.SharedConfiguration;
+import main.java.com.leon.baobui.security.JwtProvider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
