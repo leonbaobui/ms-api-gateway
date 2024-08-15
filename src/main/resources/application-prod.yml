@@ -66,7 +66,7 @@ spring:
           lower-case-service-id: true
       routes:
         -   id: ms-user-service
-            uri: https://ms-user-service.onrender.com
+            uri: https://ms-user-service-ndm5.onrender.com
             predicates:
               - Path=/ui/v1/user/**, /api/v1/user/**, /api/v1/auth/**
             filters:
@@ -77,7 +77,7 @@ spring:
 
         #        Do not apply filter for this route
         -   id: ms-user-service-auth
-            uri: https://ms-user-service.onrender.com
+            uri: https://ms-user-service-ndm5.onrender.com
             predicates:
               - Path=/ui/v1/auth/**
             filters:
@@ -126,11 +126,11 @@ spring:
 #    base-url: http://${ZIPKIN_HOST:localhost}:9411
 
 authUser:
-  url: https://ms-user-service.onrender.com/ms-user-service/api/v1/auth
+  url: https://ms-user-service-ndm5.onrender.com/ms-user-service/api/v1/auth
 
 eureka:
   instance:
-    hostname: ms-api-gateway.onrender.com  # Public domain name
+    hostname: ms-api-gateway-u3i4.onrender.com  # Public domain name
     nonSecurePort: 443  # Standard HTTPS port
     securePortEnabled: true  # Enable if you're using HTTPS
     preferIpAddress: false  # Use the hostname instead of the IP address
@@ -138,7 +138,7 @@ eureka:
     healthCheckUrlPath: /actuator/health  # Default health check path
   client:
     service-url:
-      defaultZone: https://ms-eureka-server-syh2.onrender.com/eureka
+      defaultZone: https://ms-eureka-server-2cvn.onrender.com/eureka
     fetch-registry: true
     register-with-eureka: true
 #  instance:
