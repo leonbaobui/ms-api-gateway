@@ -3,6 +3,9 @@ server:
 
 management:
   endpoint:
+    web:
+      exposure:
+        include: '*'
     gateway:
       enabled: true # default value
   web:
