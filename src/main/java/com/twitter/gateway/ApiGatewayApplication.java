@@ -11,9 +11,9 @@ import org.springframework.context.annotation.Import;
 
 @EnableFeignClients
 @EnableDiscoveryClient
-@Import({JwtProvider.class, SharedConfiguration.class})
+@Import({JwtProvider.class})
 @SpringBootApplication(
-		scanBasePackages =  {"com.twitter.gateway", "main.java.com.leon.baobui"},
+		scanBasePackages =  {"com.twitter.gateway"},
 		exclude = {DataSourceAutoConfiguration.class})
 public class ApiGatewayApplication {
 
