@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 @EnableDiscoveryClient
 @Import({JwtProvider.class, SharedConfiguration.class})
 @SpringBootApplication(
-		scanBasePackages = {"com.twitter.gateway", "com.gmail.merikbest2015"},
+		scanBasePackages =  {"com.twitter.gateway", "main.java.com.leon.baobui"},
 		exclude = {DataSourceAutoConfiguration.class})
 public class ApiGatewayApplication {
 
