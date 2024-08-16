@@ -82,7 +82,7 @@ spring:
               - RewritePath=/ui/v1/auth/(?<segment>.*), /ms-user-service/ui/v1/auth/$\{segment}
 
         -   id: ms-tweet-service
-            uri: https://ms-tweet-service.onrender.com
+            uri: https://ms-tweet-service-o6ph.onrender.com
             predicates:
               - Path=/ui/v1/tweets/**
             filters:
@@ -98,7 +98,7 @@ spring:
               - RewritePath=/api/v1/image(?<segment>/?.*), /ms-image-service/api/v1/image$\{segment}
 
         -   id: ms-chat-service
-            uri: https://ms-chat-service.onrender.com
+            uri: https://ms-chat-service-jc82.onrender.com
             predicates:
               - Path=/ui/v1/chat/**
             filters:
@@ -140,7 +140,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 #  instance:
-#    hostname: ms-eureka-server-syh2.onrender.com
+#    hostname: ms-eureka-server-2cvn.onrender.com
 
 jwt:
   secret: 208bc47b3e1ee5554e388c735b9f234f89ac246e8ce463c8313fc1cff16e760e
