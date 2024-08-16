@@ -2,15 +2,10 @@ server:
   port : 8000
 
 management:
-  endpoint:
+  endpoints:
     web:
       exposure:
-        include: '*'
-    gateway:
-      enabled: true # default value
-  web:
-    exposure:
-      include: gateway
+        include: "*"
 logging:
   level:
     reactor:
