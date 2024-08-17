@@ -90,7 +90,7 @@ spring:
               - RewritePath=/ui/v1/tweets(?<segment>/?.*), /ms-tweet-service/ui/v1/tweets$\{segment}
 
         -   id: ms-image-service
-            uri: https://ms-image-service.onrender.com
+            uri: https://ms-image-service-kfnp.onrender.com
             predicates:
               - Path=/api/v1/image/**
             filters:
@@ -106,14 +106,14 @@ spring:
               - RewritePath=/ui/v1/chat(?<segment>/?.*), /ms-chat-service/ui/v1/chat$\{segment}
 
         -   id: ms-email-service
-            uri: https://ms-email-service.onrender.com
+            uri: https://ms-email-service-y4a3.onrender.com
             predicates:
               - Path=/api/v1/email/suggested
             filters:
               - RewritePath=/api/v1/email/suggested/(?<segment>.*), /ms-email-service/api/v1/email/suggested/$\{segment}
 
         -   id: ms-websocket-service
-            uri: https://ms-websocket-service.onrender.com
+            uri: https://ms-websocket-service-vy0m.onrender.com
             predicates:
               - Path=/websocket/**, /api/v1/websocket/**
             filters:
