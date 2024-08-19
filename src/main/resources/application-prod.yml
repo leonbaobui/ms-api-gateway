@@ -8,19 +8,17 @@ management:
         include: "*"
 logging:
   level:
-    reactor:
-      netty: INFO
-    org.springframework.web.HttpLogging: TRACE
+    org.springframework.web.HttpLogging: DEBUG
     org.springframework.web.filter.CorsFilter: DEBUG
     org.springframework.security: DEBUG
-    reactor.netty.http.server: TRACE
-    reactor.netty.http.client: TRACE
-    logging.level.com.netflix.eureka: TRACE
-    logging.level.com.netflix.discovery: TRACE
+    reactor.netty.http.server: DEBUG
+    reactor.netty.http.client: DEBUG
+    logging.level.com.netflix.eureka: DEBUG
+    logging.level.com.netflix.discovery: DEBUG
     org:
       springframework:
         cloud:
-          gateway: TRACE
+          gateway: DEBUG
 spring:
   application:
     name: ms-api-gateway
@@ -32,15 +30,38 @@ spring:
     gateway:
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+        - name: Retry
+          args:
+            retries: 4
+            series:
+              - SERVER_ERROR
+            statuses:
+              - INTERNAL_SERVER_ERROR
+              - GATEWAY_TIMEOUT
+            methods:
+              - GET
+              - HEAD
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+              - PATCH
+            backoff:
+              firstBackoff: 100ms
+              maxBackoff: 1000ms
+              factor: 2
+              basedOnPreviousValue: true
       actuator:
         verbose:
           enabled: false
       httpclient:
+        connect-timeout: 10000
+        response-timeout: 15s
         ssl:
           useInsecureTrustManager: true
-        wiretap: false
-      httpserver:
         wiretap: true
+#      httpserver:
+#        wiretap: true
       globalcors:
         add-to-simple-url-handler-mapping: true
         corsConfigurations:
