@@ -56,7 +56,7 @@ spring:
           enabled: false
       httpclient:
         connect-timeout: 10000
-        response-timeout: 15s
+        response-timeout: 60s
         ssl:
           useInsecureTrustManager: true
         wiretap: true
