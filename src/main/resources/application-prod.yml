@@ -85,7 +85,7 @@ spring:
           lower-case-service-id: true
       routes:
         -   id: ms-user-service
-            uri: https://ms-user-service-ndm5.onrender.com
+            uri: https://ms-user-service-irol.onrender.com
             predicates:
               - Path=/ui/v1/user/**, /api/v1/user/**, /api/v1/auth/**
             filters:
@@ -96,14 +96,14 @@ spring:
 
         #        Do not apply filter for this route
         -   id: ms-user-service-auth
-            uri: https://ms-user-service-ndm5.onrender.com
+            uri: https://ms-user-service-irol.onrender.com
             predicates:
               - Path=/ui/v1/auth/**
             filters:
               - RewritePath=/ui/v1/auth/(?<segment>.*), /ms-user-service/ui/v1/auth/$\{segment}
 
         -   id: ms-tweet-service
-            uri: https://ms-tweet-service-o6ph.onrender.com
+            uri: https://ms-tweet-service-vj9h.onrender.com
             predicates:
               - Path=/ui/v1/tweets/**
             filters:
@@ -119,7 +119,7 @@ spring:
               - RewritePath=/api/v1/image(?<segment>/?.*), /ms-image-service/api/v1/image$\{segment}
 
         -   id: ms-chat-service
-            uri: https://ms-chat-service-jc82.onrender.com
+            uri: https://ms-chat-service-tnm2.onrender.com
             predicates:
               - Path=/ui/v1/chat/**
             filters:
@@ -127,14 +127,14 @@ spring:
               - RewritePath=/ui/v1/chat(?<segment>/?.*), /ms-chat-service/ui/v1/chat$\{segment}
 
         -   id: ms-email-service
-            uri: https://ms-email-service-y4a3.onrender.com
+            uri: https://ms-email-service-taww.onrender.com
             predicates:
               - Path=/api/v1/email/suggested
             filters:
               - RewritePath=/api/v1/email/suggested/(?<segment>.*), /ms-email-service/api/v1/email/suggested/$\{segment}
 
         -   id: ms-websocket-service
-            uri: https://ms-websocket-service-vy0m.onrender.com
+            uri: https://ms-websocket-service-k09k.onrender.com
             predicates:
               - Path=/websocket/**, /api/v1/websocket/**
             filters:
@@ -145,11 +145,11 @@ spring:
 #    base-url: http://${ZIPKIN_HOST:localhost}:9411
 
 authUser:
-  url: https://ms-user-service-ndm5.onrender.com/ms-user-service/api/v1/auth
+  url: https://ms-user-service-irol.onrender.com/ms-user-service/api/v1/auth
 
 eureka:
   instance:
-    hostname: ms-api-gateway-u3i4.onrender.com  # Public domain name
+    hostname: ms-api-gateway-inku.onrender.com  # Public domain name
     nonSecurePort: 443  # Standard HTTPS port
     securePortEnabled: true  # Enable if you're using HTTPS
     preferIpAddress: false  # Use the hostname instead of the IP address
