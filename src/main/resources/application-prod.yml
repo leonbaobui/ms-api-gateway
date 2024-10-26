@@ -1,5 +1,5 @@
 server:
-  port : 8443
+  port : 8090
 
 management:
   endpoints:
@@ -81,11 +81,12 @@ spring:
               - HEAD
       discovery:
         locator:
-          enabled: true
+          enabled: false
           lower-case-service-id: true
       routes:
         -   id: ms-user-service
-            uri: https://ms-user-service-irol.onrender.com
+#            uri: https://ms-user-service-irol.onrender.com
+            uri: http://localhost:8443
             predicates:
               - Path=/ui/v1/user/**, /api/v1/user/**, /api/v1/auth/**
             filters:
@@ -96,7 +97,8 @@ spring:
 
         #        Do not apply filter for this route
         -   id: ms-user-service-auth
-            uri: https://ms-user-service-irol.onrender.com
+#            uri: https://ms-user-service-irol.onrender.com
+            uri: http://localhost:8443
             predicates:
               - Path=/ui/v1/auth/**
             filters:
@@ -145,8 +147,8 @@ spring:
 #    base-url: http://${ZIPKIN_HOST:localhost}:9411
 
 authUser:
-  url: https://ms-user-service-irol.onrender.com/ms-user-service/api/v1/auth
-
+#  url: https://ms-user-service-irol.onrender.com/ms-user-service/api/v1/auth
+  url: http://localhost:8443/ms-user-service/api/v1/auth
 eureka:
   instance:
     hostname: ms-api-gateway-inku.onrender.com  # Public domain name
