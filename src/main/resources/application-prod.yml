@@ -152,7 +152,7 @@ authUser:
 
 eureka:
   instance:
-    hostname: ms-api-gateway-inku.onrender.com  # Public domain name
+    hostname: ms-api-gateway-cjh1.onrender.com  # Public domain name
     nonSecurePort: 443  # Standard HTTPS port
     securePortEnabled: true  # Enable if you're using HTTPS
     preferIpAddress: false  # Use the hostname instead of the IP address
