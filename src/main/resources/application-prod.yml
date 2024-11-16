@@ -160,7 +160,7 @@ eureka:
     healthCheckUrlPath: /actuator/health  # Default health check path
   client:
     service-url:
-      defaultZone: https://ms-eureka-server-2cvn.onrender.com/eureka
+      defaultZone: https://ms-eureka-server-cdam.onrender.com/eureka
     fetch-registry: true
     register-with-eureka: true
 #  instance:
