@@ -160,7 +160,7 @@ spring:
           predicates:
             - Path=/api/v1/notification/**
           filters:
-            - RewritePath=/api/v1/notification(?<segment>.*), /ms-notification-service/api/v1/notification$\{segment}
+            - RewritePath=/api/v1/notification(?<segment>/?.*), /ms-notification-service/api/v1/notification$\{segment}
 
 #  zipkin:
 #    base-url: http://${ZIPKIN_HOST:localhost}:9411
