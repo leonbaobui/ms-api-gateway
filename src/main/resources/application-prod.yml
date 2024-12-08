@@ -155,6 +155,13 @@ spring:
               - RewritePath=/websocket/(?<segment>.*), /ms-websocket-service/websocket/$\{segment}
               - RewritePath=/api/v1/websocket(?<segment>/?.*), /ms-websocket-service/api/v1/websocket$\{segment}
 
+        - id: ms-notification-service
+          uri: lb://ms-notification-service
+          predicates:
+            - Path=/api/v1/notification/**
+          filters:
+            - RewritePath=/api/v1/notification(?<segment>.*), /ms-notification-service/api/v1/notification$\{segment}
+
 #  zipkin:
 #    base-url: http://${ZIPKIN_HOST:localhost}:9411
 
