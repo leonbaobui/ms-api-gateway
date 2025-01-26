@@ -162,6 +162,14 @@ spring:
           filters:
             - RewritePath=/api/v1/notification(?<segment>/?.*), /ms-notification-service/api/v1/notification$\{segment}
 
+        - id: ms-notification-service-ui
+          uri: lb://ms-notification-service
+          predicates:
+            - Path=/ui/v1/notification/**
+          filters:
+            - name: AuthFilter
+            - RewritePath=/ui/v1/notification(?<segment>/?.*), /ms-notification-service/ui/v1/notification$\{segment}
+
 #  zipkin:
 #    base-url: http://${ZIPKIN_HOST:localhost}:9411
 
