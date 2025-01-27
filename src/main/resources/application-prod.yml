@@ -124,6 +124,13 @@ spring:
               - name: AuthFilter
               - RewritePath=/ui/v1/tweets(?<segment>/?.*), /ms-tweet-service/ui/v1/tweets$\{segment}
 
+        -   id: ms-tweet-service-api
+            uri: lb://ms-tweet-service
+            predicates:
+              - Path=/api/v1/tweets/**
+            filters:
+              - RewritePath=/api/v1/tweets(?<segment>/?.*), /ms-tweet-service/api/v1/tweets$\{segment}
+
         -   id: ms-image-service
             uri: lb://ms-image-service
             predicates:
